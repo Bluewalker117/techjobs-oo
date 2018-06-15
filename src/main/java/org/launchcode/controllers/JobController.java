@@ -1,5 +1,7 @@
 package org.launchcode.controllers;
 
+import org.launchcode.models.Job;
+import org.launchcode.models.JobFieldType;
 import org.launchcode.models.forms.JobForm;
 import org.launchcode.models.data.JobData;
 import org.springframework.stereotype.Controller;
@@ -9,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.validation.Valid;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Created by LaunchCode
@@ -23,7 +27,16 @@ public class JobController {
     @RequestMapping(value = "", method = RequestMethod.GET)
     public String index(Model model, int id) {
 
-        // TODO #1 - get the Job with the given ID and pass it into the view
+        Job single = jobData.findById(id);
+        model.addAttribute("name", single.getName());
+        model.addAttribute("employer", single.getEmployer());
+        model.addAttribute("skill", single.getCoreCompetency());
+        model.addAttribute("location", single.getLocation());
+        model.addAttribute("jobtype", single.getPositionType());
+        model.addAttribute("title", "Test");
+
+
+        // 2-do #1 get the Job with the given ID and pass it into the view
 
         return "job-detail";
     }

@@ -8,7 +8,31 @@
 
 <div class="container body-content">
 
-    <!-- // TODO #2 - display the job fields, one per row -->
+    <table class="single_job">
+        <tr>
+            <td><h4>Name</h4></td>
+            <td th:text ="${name}"></td>
+        </tr>
+        <tr>
+            <td><h4>Employer</h4></td>
+            <td th:text ="${employer}"></td>
+        </tr>
+        <tr>
+            <td><h4>Position Skills</h4></td>
+            <td th:text ="${skill}"></td>
+        </tr>
+        <tr>
+            <td><h4>Position Type</h4></td>
+            <td th:text ="${jobtype}"></td>
+        </tr>
+        <tr>
+            <td><h4>Position Location</h4></td>
+            <td th:text ="${location}"></td>
+        </tr>
+
+    </table>
+
+    <!-- // 2-do #2 - display the job fields, one per row -->
 
 </div>
 
