@@ -49,7 +49,7 @@ public class JobController {
     }
 
     @RequestMapping(value = "add", method = RequestMethod.POST)
-    public String add(Model model, @Valid JobForm jobForm, Job newJob, Errors errors) {
+    public String add(Model model, Job newJob, @Valid JobForm jobForm, Errors errors) {
 
         // 2-do #6 - Validate the JobForm model, and if valid, create a
         // new Job and add it to the jobData data store. Then
